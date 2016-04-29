@@ -1,15 +1,8 @@
-
-# coding: utf-8
-
-# In[49]:
-
 import pandas as pd
 from pandas import *
 from datetime import datetime
 import os
 
-
-# In[61]:
 
 def get_data_frames(path):
     output_path = os.path.join(path, "df_output1")
@@ -48,17 +41,11 @@ def get_data_frames(path):
 
                     dtw1.to_csv(os.path.join(output_path, home_id+"_"+column+"_weekend_out.csv"))
                     
-
-
-        
-
-
-# In[62]:
+   
 
 get_data_frames('/home/minbaev/Downloads/SC/test/')
 
 
-# In[ ]:
 
 
 
