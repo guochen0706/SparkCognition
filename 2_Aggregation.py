@@ -1,16 +1,9 @@
-
-# coding: utf-8
-
-# In[189]:
-
 import pandas as pd
 import os
 import operator
 import csv
 from collections import Counter
 
-
-# In[190]:
 
 # This function fetches the most frequent season if the data is for three months.
 # It takes the DataFrame from append_appliencies function as an argument
@@ -50,7 +43,6 @@ def get_season(DataFrame):
   
 
 
-# In[195]:
 
 #This function creates a DataFrame for other functions appending columns with similar appliencies, e.g. air1 and air2
 #It takes the path to the cvs file as an argument
@@ -138,7 +130,6 @@ def append_appliencies (path):
     return df
 
 
-# In[196]:
 
 #This function returns the list of 5 top-used appliencies for each homeID
 def find_top_appliencies(DataFrame):
@@ -169,8 +160,6 @@ def find_top_appliencies(DataFrame):
     return my_list
 
 
-# In[199]:
-
 # This is our main method. We iterate over each cvs file in our directory. We make sure to iterate only over .cvs files
 # We then print each file's ID with its most frequent seoson or "Over three months" string if it is for more than three months
 # We then make sure that we find top-5 appliencies only for Summer files in case of three months or two-year files as 
@@ -193,8 +182,6 @@ def get_top_list (path):
             
 
 
-# In[219]:
-
 def aggregate (path):
     top5 = get_top_list(path)
     print "top5 list: ", top5
@@ -209,21 +196,9 @@ def aggregate (path):
             df1 = df[['localminute'] + top5]
             df1.to_csv(os.path.join(output_path, doc.split('.')[0]+"_out.csv"))
             
-    
-    
 
-
-# In[220]:
 
 aggregate('/home/minbaev/Downloads/SC/')
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
 
 
 
