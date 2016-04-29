@@ -1,2 +1,0 @@
-# SparkCognition
-aa
